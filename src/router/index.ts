@@ -10,7 +10,11 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Home',
-    redirect:'/home'
+    redirect:'/main'
+  },{
+    path: '/main',
+    name: 'Main',
+    component: () => require("../layout/Main")
   },{
     path: '/login',
     name: 'Login',
