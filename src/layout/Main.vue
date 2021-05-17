@@ -1,19 +1,49 @@
 <template>
-    <el-container>
-        <el-header>Header</el-header>
+    <div>
         <el-container>
-            <el-aside width="200px">Aside</el-aside>
-            <el-main>Main</el-main>
+            <el-header>
+                <div class="head-left">
+                    LOGO
+                </div>
+                <div class="head-right">
+                    <el-popover
+                        style="width: 120px;min-width: 80px"
+                        placement="bottom"
+                        :width="80"
+                        trigger="hover"
+                        popper-class="popover-user"
+                    >
+                        <template #reference>
+                            <el-avatar shape="circle" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
+                        </template>
+
+                        <div>修改密码</div>
+                        <div>退出登录</div>
+                    </el-popover>
+
+                </div>
+            </el-header>
+            <el-container>
+                <el-aside width="200px">
+                    <side/>
+                </el-aside>
+                <el-main>Main</el-main>
+            </el-container>
         </el-container>
-    </el-container>
+    </div>
+
 </template>
 
 <script>
 import {defineComponent} from 'vue'
 
+import Side from './side/Index.vue'
 
 export default defineComponent({
     name: 'login',
+    components: {
+        Side
+    },
     setup() {
 
     }
@@ -22,22 +52,42 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .el-container {
+    background-color: #fff;
     .el-header {
-        background-color: #B3C0D1;
+        background-color: #26394d;
         color: #333;
-        text-align: center;
-        line-height: 60px;
-    }
-    .el-container{
         display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 45px;
+        .head-left {
+            color: #FFFFFF;
+        }
+        .head-right {
+            width: 40px;
+            height: 40px;
+
+            .el-avatar{
+                display: flex;
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    .el-container {
+        display: flex;
+
         .el-aside {
-            background-color: #D3DCE6;
+            background-color: #545c64;
             color: #333;
             text-align: center;
             height: calc(100vh - 60px);
         }
 
         .el-main {
+            margin: 10px;
+            border-radius: 3px;
             width: 100%;
             background-color: #E9EEF3;
             color: #333;

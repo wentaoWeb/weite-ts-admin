@@ -20,3 +20,47 @@ span {
   height: 100%;
   box-sizing: border-box;
 }
+
+
+//美化侧边栏滚动条
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+.el-aside::-webkit-scrollbar{
+  width: 5px;
+  height: 5px;
+  background-color: #F5F5F5;
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+.el-aside::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+/*定义滑块 内阴影+圆角*/
+.el-aside::-webkit-scrollbar-thumb{
+  border-radius: 5px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .1);
+  background-color: #c8c8c8;
+}
+.el-submenu__title{
+  padding-left: 20px !important;
+}
+
+
+/*其他公共样式*/
+.popover-user{
+  min-width: auto !important;
+  margin: 0;
+  padding: 0;
+  div{
+    line-height: 25px;
+    text-align: center;
+    cursor: pointer;
+    &:hover{
+      color: #42b983;
+    }
+  }
+}
