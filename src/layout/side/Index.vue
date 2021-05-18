@@ -17,20 +17,15 @@
                     <template #title>
                         <span>选项5</span>
                     </template>
-                    <el-menu-item-group>
-                        <el-menu-item index="5-1-1">选项5-1</el-menu-item>
-                        <el-menu-item index="5-1-2">选项5-2</el-menu-item>
-                    </el-menu-item-group>
-                    <el-menu-item-group>
-                        <el-menu-item index="5-1-3">选项5-3</el-menu-item>
-                    </el-menu-item-group>
+                    <el-menu-item index="5-1-1">选项5-1</el-menu-item>
+                    <el-menu-item index="5-1-2">选项5-2</el-menu-item>
+                    <el-menu-item index="5-1-3">选项5-3</el-menu-item>
                     <el-menu-item index="5-1-4-1">选项5-1</el-menu-item>
                     <el-menu-item index="5-1-4-2">选项5-2</el-menu-item>
                     <el-menu-item index="5-1-4-3">选项5-3</el-menu-item>
                     <el-menu-item index="5-1-4-4">选项5-4</el-menu-item>
                     <el-menu-item index="5-1-4-5">选项5-5</el-menu-item>
                     <el-menu-item index="5-1-4-6">选项5-6</el-menu-item>
-
                 </el-submenu>
             </el-submenu>
             <el-menu-item index="2">
@@ -72,6 +67,7 @@ export default defineComponent({
 <style scoped lang="scss">
 .el-menu-vertical-demo {
     overflow-x: hidden;
+
     .el-submenu .el-menu-item, .el-submenu, .el-menu-item {
         min-width: 200px;
     }
@@ -84,8 +80,9 @@ export default defineComponent({
     .el-menu-item-group__title {
         padding: 0;
     }
-    .el-submenu{
-        .el-submenu__title{
+
+    .el-submenu {
+        .el-submenu__title {
             padding-left: 20px;
         }
     }
