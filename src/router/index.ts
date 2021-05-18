@@ -14,6 +14,7 @@ const routes: Array<RouteRecordRaw> = [
     path: '/main',
     name: 'Main',
     component: () => require("../layout/Main"),
+    redirect:'/dashboard',
     children:[
       {
         path: '/dashboard',
