@@ -1,9 +1,15 @@
 <template>
     <div>
-        <el-menu default-active="1-4-1" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"
+        <el-menu default-active="1-4-1" class="el-menu-vertical-demo"
+                 @select="handSelect"
                  background-color="#545c64"
                  text-color="#fff"
-                 active-text-color="#ffd04b">
+                 active-text-color="#ffd04b"
+                 router>
+            <el-menu-item index="/dashboard">
+                <i class="el-icon-menu"></i>
+                <template #title>Dashboard</template>
+            </el-menu-item>
             <el-submenu index="1">
                 <template #title>
                     <i class="el-icon-location"></i>
@@ -40,24 +46,20 @@
     </div>
 </template>
 
-<script>
-import {defineComponent} from 'vue'
+<script lang="ts">
+import {defineComponent, inject} from 'vue'
 
 
 export default defineComponent({
     name: 'Side',
     setup() {
-        const handleOpen = (key, keyPath) => {
-            console.log(key, keyPath);
-        }
-        const handleClose = (key, keyPath) => {
+        function handSelect(key, keyPath){
             console.log(key, keyPath);
         }
 
 
         return {
-            handleOpen,
-            handleClose
+            handSelect
         }
     }
 

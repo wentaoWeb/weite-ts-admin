@@ -68,23 +68,23 @@ module.exports = {
   },
 
   devServer: {
-    host: "0.0.0.0",
+    // host: "0.0.0.0",
     port: "9999",
     hot: true,
-    open: true,
+    // open: true,
     // logLevel: "debug",
     // 错误、警告在页面弹出
     // overlay: {
     //   warning: false,
     //   error: true
     // }
-    proxy: {
-      "/Ep_fastmock": {
-        target:
-          "https://www.fastmock.site/mock/126581e68fcaca6927fdfbf68e6aed5c",
-        ws: false,
-        changeOrigin: true
-      }
-    }
+    // proxy: {
+    //   "/Ep_fastmock": {
+    //     target:
+    //       "https://www.fastmock.site/mock/126581e68fcaca6927fdfbf68e6aed5c",
+    //     ws: false,
+    //     changeOrigin: true
+    //   }
+    // }
   }
 };

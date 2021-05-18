@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import Home from '../App.vue'
 import {getComponentByRootPath} from './util'
 
 let getComponent;
@@ -14,7 +13,14 @@ const routes: Array<RouteRecordRaw> = [
   },{
     path: '/main',
     name: 'Main',
-    component: () => require("../layout/Main")
+    component: () => require("../layout/Main"),
+    children:[
+      {
+        path: '/dashboard',
+        name: 'dashboard',
+        component: getComponent('dashboard/Index')
+      }
+    ]
   },{
     path: '/login',
     name: 'Login',

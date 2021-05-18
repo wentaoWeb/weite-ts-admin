@@ -27,14 +27,22 @@
                 <el-aside width="200px">
                     <side/>
                 </el-aside>
-                <el-main>Main</el-main>
+                <el-main>
+                    <el-scrollbar>
+                        <router-view v-slot="{ Component }">
+                            <transition name="fade-top" mode="out-in">
+                                <component :is="Component" />
+                            </transition>
+                        </router-view>
+                    </el-scrollbar>
+                </el-main>
             </el-container>
         </el-container>
     </div>
 
 </template>
 
-<script>
+<script lang="ts">
 import {defineComponent} from 'vue'
 
 import Side from './side/Index.vue'
