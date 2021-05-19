@@ -8,15 +8,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue';
-
-
-export default defineComponent({
-    name: 'App',
-    components: {  },
+import { getCurrentInstance, provide } from "vue";
+export default {
     setup() {
-
+        const { appContext } = getCurrentInstance();
+        const $app = appContext.config.globalProperties;
+        // console.log("--$app--", $app);
+        provide("$app", $app);
     }
-
-})
+};
 </script>

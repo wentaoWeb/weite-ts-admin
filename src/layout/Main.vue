@@ -43,7 +43,7 @@
 </template>
 
 <script lang="ts">
-import {defineComponent} from 'vue'
+import {defineComponent, inject} from 'vue';
 import {useStore} from 'vuex';
 import {useRouter} from 'vue-router';
 
@@ -55,14 +55,17 @@ export default defineComponent({
         Side
     },
     setup() {
-        const store = useStore()
-        const router = useRouter()
+        const $app:any = inject("$app");
+        console.log($app);
+
+        // const store = useStore()
+        // const router = useRouter()
         const modify = () => {
             console.log('修改密码');
         }
         const signout = () => {
-            store.dispatch('delToken');
-            router.push('/login')
+            $app.$store.dispatch('delToken');
+            $app.$router.push('/login')
         }
         return {
             modify,
@@ -119,6 +122,7 @@ export default defineComponent({
     }
 
 }
+
 
 //路由切换动画
 .fade-transform-leave-active,
