@@ -20,16 +20,16 @@ const routes: Array<RouteRecordRaw> = [
         path: '/dashboard',
         name: 'dashboard',
         component: getComponent('dashboard/Index')
+      },{
+        path: '/home',
+        name: 'shouye',
+        component: getComponent('home/Index')
       }
     ]
   },{
     path: '/login',
     name: 'Login',
     component: getComponent('login/Index')
-  },{
-    path: '/home',
-    name: 'shouye',
-    component: getComponent('home/Index')
   }
 ]
 

@@ -17,8 +17,8 @@
                             <el-avatar shape="circle" src="https://cube.elemecdn.com/0/88/03b0d39583f48206768a7534e55bcpng.png"></el-avatar>
                         </template>
 
-                        <div>修改密码</div>
-                        <div>退出登录</div>
+                        <div @click="modify">修改密码</div>
+                        <div @click="signout">退出登录</div>
                     </el-popover>
 
                 </div>
@@ -44,6 +44,8 @@
 
 <script lang="ts">
 import {defineComponent} from 'vue'
+import {useStore} from 'vuex';
+import {useRouter} from 'vue-router';
 
 import Side from './side/Index.vue'
 
@@ -53,7 +55,19 @@ export default defineComponent({
         Side
     },
     setup() {
-
+        const store = useStore()
+        const router = useRouter()
+        const modify = () => {
+            console.log('修改密码');
+        }
+        const signout = () => {
+            store.dispatch('delToken');
+            router.push('/login')
+        }
+        return {
+            modify,
+            signout
+        }
     }
 })
 </script>
@@ -106,4 +120,51 @@ export default defineComponent({
 
 }
 
+//路由切换动画
+.fade-transform-leave-active,
+.fade-transform-enter-active {
+    transition: all 0.5s;
+}
+
+.fade-transform-enter {
+    opacity: 0;
+    transform: translateX(-30px);
+}
+
+.fade-transform-leave-to {
+    opacity: 0;
+    transform: translateX(30px);
+}
+// 渐入
+.fade-right-enter-active {
+    transition: all 0.5s;
+}
+.fade-right-leave-active {
+    transition: all 0.5s;
+}
+.fade-right-enter-from {
+    opacity: 0;
+    transform: translateX(-35px);
+}
+.fade-right-leave-to {
+    opacity: 0;
+    transform: translateX(35px);
+    display: none;
+}
+// 上滑
+.fade-top-enter-active {
+    transition: all 0.3s;
+}
+.fade-top-leave-active {
+    transition: all 0.3s;
+}
+.fade-top-enter-from {
+    opacity: 0;
+    transform: translateY(35px);
+}
+.fade-top-leave-to {
+    opacity: 0;
+    transform: translateY(-35px);
+    display: none;
+}
 </style>

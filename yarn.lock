@@ -1434,6 +1434,13 @@
   optionalDependencies:
     prettier "^1.18.2"
 
+"@vue/composition-api@^1.0.0-rc.8":
+  version "1.0.0-rc.8"
+  resolved "https://registry.nlark.com/@vue/composition-api/download/@vue/composition-api-1.0.0-rc.8.tgz?cache=0&sync_timestamp=1619671377114&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40vue%2Fcomposition-api%2Fdownload%2F%40vue%2Fcomposition-api-1.0.0-rc.8.tgz#ace0f1c8cc7d5b193825fabdc7c4b919bb182a9e"
+  integrity sha1-rODxyMx9Wxk4Jfq9x8S5GbsYKp4=
+  dependencies:
+    tslib "^2.2.0"
+
 "@vue/preload-webpack-plugin@^1.1.0":
   version "1.1.2"
   resolved "https://registry.nlark.com/@vue/preload-webpack-plugin/download/@vue/preload-webpack-plugin-1.1.2.tgz#ceb924b4ecb3b9c43871c7a429a02f8423e621ab"
@@ -6469,6 +6476,11 @@ pify@^4.0.1:
   resolved "https://registry.npm.taobao.org/pify/download/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha1-SyzSXFDVmHNcUCkiJP2MbfQeMjE=
 
+pinia@^0.5.1:
+  version "0.5.1"
+  resolved "https://registry.nlark.com/pinia/download/pinia-0.5.1.tgz#9f26cebc9faa33509a304f7f5f088e3dc283c1b6"
+  integrity sha1-nybOvJ+qM1CaME9/XwiOPcKDwbY=
+
 pinkie-promise@^2.0.0:
   version "2.0.1"
   resolved "https://registry.npm.taobao.org/pinkie-promise/download/pinkie-promise-2.0.1.tgz#2135d6dfa7a358c069ac9b178776288228450ffa"
@@ -8320,6 +8332,11 @@ tslib@^1.8.0, tslib@^1.8.1:
   resolved "https://registry.nlark.com/tslib/download/tslib-1.14.1.tgz?cache=0&sync_timestamp=1618847097275&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslib%2Fdownload%2Ftslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
 
+tslib@^2.2.0:
+  version "2.2.0"
+  resolved "https://registry.nlark.com/tslib/download/tslib-2.2.0.tgz?cache=0&sync_timestamp=1618847097275&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslib%2Fdownload%2Ftslib-2.2.0.tgz#fb2c475977e35e241311ede2693cee1ec6698f5c"
+  integrity sha1-+yxHWXfjXiQTEe3iaTzuHsZpj1w=
+
 tslint@^5.20.1:
   version "5.20.1"
   resolved "https://registry.nlark.com/tslint/download/tslint-5.20.1.tgz?cache=0&sync_timestamp=1618847624538&other_urls=https%3A%2F%2Fregistry.nlark.com%2Ftslint%2Fdownload%2Ftslint-5.20.1.tgz#e401e8aeda0152bc44dd07e614034f3f80c67b7d"
@@ -8629,21 +8646,6 @@ vue-class-component@^7.2.6:
   version "7.2.6"
   resolved "https://registry.npm.taobao.org/vue-class-component/download/vue-class-component-7.2.6.tgz#8471e037b8e4762f5a464686e19e5afc708502e4"
   integrity sha1-hHHgN7jkdi9aRkaG4Z5a/HCFAuQ=
-
-vue-cli-plugin-element@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npm.taobao.org/vue-cli-plugin-element/download/vue-cli-plugin-element-1.0.1.tgz#34e58fb65b36cf59afaf14f503288e5e578b1554"
-  integrity sha1-NOWPtls2z1mvrxT1AyiOXleLFVQ=
-
-vue-cli-plugin-scss-base@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.npm.taobao.org/vue-cli-plugin-scss-base/download/vue-cli-plugin-scss-base-0.2.2.tgz#5664660f4a69ee4871a6c3e10eef453e5443b4a0"
-  integrity sha1-VmRmD0pp7khxpsPhDu9FPlRDtKA=
-
-vue-cli-plugin-tsx-support@^0.4.1:
-  version "0.4.1"
-  resolved "https://registry.nlark.com/vue-cli-plugin-tsx-support/download/vue-cli-plugin-tsx-support-0.4.1.tgz#439b750f5a8dc95f87bf450c853bd46923bc4589"
-  integrity sha1-Q5t1D1qNyV+Hv0UMhTvUaSO8RYk=
 
 vue-hot-reload-api@^2.3.0:
   version "2.3.4"
