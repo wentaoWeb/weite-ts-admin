@@ -1,6 +1,11 @@
 <template>
-    <div>
-        面板页
+    <div class="dashboard">
+        <div class="top" v-for="(item,index) in 5" :key="index">
+            <el-card class="box-card" shadow="always" v-for="(item,index) in 3" :key="index">
+                从不显示
+            </el-card>
+        </div>
+
     </div>
 </template>
 
@@ -24,5 +29,14 @@ export default defineComponent({
 })
 </script>
 <style scoped lang="scss">
-
+.dashboard{
+    width: 100%;
+    .top{
+        display: flex;
+        justify-content: space-evenly;
+        .box-card{
+            width: 32%;
+        }
+    }
+}
 </style>

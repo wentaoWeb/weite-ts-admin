@@ -28,7 +28,7 @@
                     <side/>
                 </el-aside>
                 <el-main>
-                    <el-scrollbar>
+                    <el-scrollbar class="scroll" >
                         <router-view v-slot="{ Component }">
                             <transition name="fade-top" mode="out-in">
                                 <component :is="Component" />
@@ -77,7 +77,7 @@ export default defineComponent({
 
 <style scoped lang="scss">
 .el-container {
-    background-color: #fff;
+    background-color: #e4e4e7;
     .el-header {
         background-color: #26394d;
         color: #333;
@@ -113,12 +113,19 @@ export default defineComponent({
         .el-main {
             margin: 10px;
             border-radius: 3px;
-            width: 100%;
-            background-color: #E9EEF3;
+            height: calc(100% - 80px);
+            //height: 670px;
+            max-height: calc(100vh - 80px);
+            background-color: #fff;
             color: #333;
             text-align: center;
             line-height: 160px;
+            padding: 10px;
+            .scroll{
+                height: 100%;
+            }
         }
+
     }
 
 }
