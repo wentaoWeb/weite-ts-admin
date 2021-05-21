@@ -1,14 +1,15 @@
 import axios, {AxiosInstance, AxiosResponse, Method} from 'axios';
 import qs from 'qs';
-import {ElLoading, ElNotification} from 'element-plus';
+import {ElLoading, ElNotification,ElMessage } from 'element-plus';
 import NProgress from 'nprogress';
 import 'nprogress/nprogress.css';
 
 import store from '@/store/index.ts';
+import router from "@/router/index.ts"
 
 import {traverseArray} from '@/utils/index.ts';
 
-
+// console.log(router);
 //创建axios请求
 const instance = axios.create();
 //设置拦截器
@@ -35,7 +36,7 @@ function all(methods: Method, api: string, params: any, load?: any) {
         baseURL: baseUrl,
         data: params,
         load: load || {isUpload:false},
-        notProcessed:true
+        notProcessed:false
     });
     return (i as Promise<unknown> as Promise<any>);
 }
@@ -146,10 +147,12 @@ function setInterceptors(instance: AxiosInstance) {
         if (data.status === 200) {
             resolve(data);
         } else if (data.status === 1000 || data.status === 1001 || data.status === 401) {
+            ElMessage.error(data.message || '服务异常')
             //不做处理
             if (!response.config.notProcessed) {
                 await store.dispatch('logout');
                 //路由跳转
+                await router.push('/login')
             }
             reject(data);
         } else {
