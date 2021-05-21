@@ -113,14 +113,15 @@ export default defineComponent({
         .el-main {
             margin: 10px;
             border-radius: 3px;
-            height: calc(100% - 80px);
+            height: calc(100vh - 80px);
             //height: 670px;
-            max-height: calc(100vh - 80px);
+            //min-height: calc(100vh - 80px);
+            //max-height: calc(100vh - 80px);
             background-color: #fff;
             color: #333;
             text-align: center;
             line-height: 160px;
-            padding: 10px;
+            padding: 0;
             .scroll{
                 height: 100%;
             }
