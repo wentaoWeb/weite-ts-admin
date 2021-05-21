@@ -15,7 +15,7 @@ const instance = axios.create();
 //设置拦截器
 setInterceptors(instance);
 
-const baseUrl = 'https://www.fastmock.site/mock/40bda03beca13f6b447c68bdad2bfd79/weite-ts-admin';
+const baseUrl = '/weite-ts-admin';
 
 function get(api: string, params?: any) {
     return instance({
@@ -29,12 +29,12 @@ function get(api: string, params?: any) {
 
 }
 
-function all(methods: Method, api: string, params: any, load?: any) {
+function all(methods: Method, api: string, params?: any, load?: any) {
     const i = instance({
         method: methods,
         url: api,
         baseURL: baseUrl,
-        data: params,
+        data: params||{},
         load: load || {isUpload:false},
         notProcessed:false
     });

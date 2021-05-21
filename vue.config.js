@@ -78,13 +78,16 @@ module.exports = {
     //   warning: false,
     //   error: true
     // }
-    // proxy: {
-    //   "/Ep_fastmock": {
-    //     target:
-    //       "https://www.fastmock.site/mock/126581e68fcaca6927fdfbf68e6aed5c",
-    //     ws: false,
-    //     changeOrigin: true
-    //   }
-    // }
+    proxy: {
+      "/weite-ts-admin": {
+        target:
+          "https://www.fastmock.site/mock/40bda03beca13f6b447c68bdad2bfd79",
+        ws: true,
+        changeOrigin: true,
+        // pathRewrite:{  // 路径重写，
+        //   '^/weite-ts-admin': '/'  // 替换target中的请求地址，也就是说/api=/target，请求target这个地址的时候直接写成/api即可。
+        // }
+      }
+    }
   }
 };
