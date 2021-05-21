@@ -16,6 +16,10 @@
       "webpack-env"
     ],
     "paths": {
+      "*": [
+        "./node_modules/@types",
+        "./typings/*"
+      ],
       "@/*": [
         "src/*"
       ]

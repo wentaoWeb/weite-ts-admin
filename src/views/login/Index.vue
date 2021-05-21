@@ -2,7 +2,7 @@
     <div class="content-inside">
         <div class="login">
             <div class="left">
-<!--                <img src="./images/logo.png" alt="">-->
+                <!--                <img src="./images/logo.png" alt="">-->
                 <div>系统登录页</div>
             </div>
             <div class="blur">
@@ -26,35 +26,41 @@
 
             </div>
         </div>
-<!--        <div class="footer">中共宁波市海曙区纪律检查委员会 宁波市海曙区监察委员会</div>-->
+        <!--        <div class="footer">中共宁波市海曙区纪律检查委员会 宁波市海曙区监察委员会</div>-->
     </div>
 </template>
 
-<script>
-import { defineComponent,reactive } from 'vue'
-import { useStore} from "vuex";
-import { useRouter } from "vue-router";
+<script lang="ts">
+import {defineComponent, inject, reactive} from 'vue';
+import {useStore} from 'vuex';
+import {useRouter} from 'vue-router';
 
 export default defineComponent({
     name: 'login',
     setup() {
-
+        const $app: any = inject('$app');
+        // console.log($app);
         const loginInfo = reactive({
-            loginName:'weite',
-            password:'admin'
-        })
+            loginName: 'weite',
+            password: 'admin'
+        });
         const store = useStore();
         const router = useRouter();
         const login = () => {
-            store.dispatch('setToken')
-            router.replace('/main')
-        }
+            $app.$api.all('post','/api/login',{
+                ...loginInfo
+            }).then(res => {
+                $app.$store.dispatch('setToken');
+                $app.$router.replace('/main');
+            });
+
+        };
         return {
             loginInfo,
             login
-        }
+        };
     }
-})
+});
 </script>
 
 
@@ -86,6 +92,7 @@ export default defineComponent({
             text-align: center;
             display: grid;
             place-items: center;
+
             img {
                 width: 161px;
                 height: 69px;

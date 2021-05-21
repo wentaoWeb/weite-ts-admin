@@ -13,7 +13,7 @@ export default defineComponent({
     name: 'Dashboard',
     setup() {
         const store = useStore()
-        console.log(store.state.token);
+        // console.log(store.state.token);
 
         return {
 

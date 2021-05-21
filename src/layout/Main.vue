@@ -56,7 +56,7 @@ export default defineComponent({
     },
     setup() {
         const $app:any = inject("$app");
-        console.log($app);
+        // console.log($app);
 
         // const store = useStore()
         // const router = useRouter()

@@ -22,7 +22,11 @@ export default createStore({
         },
         async delToken() {
           this.commit('delToken')
+        },
+        async logout(){
+            this.commit('delToken')
         }
+
     },
     modules: {}
 });

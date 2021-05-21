@@ -3,7 +3,7 @@ function resolve(dir) {
   return path.join(__dirname, dir);
 }
 
-console.log("当前所接入服务地址1----->", process.env.VUE_APP_DATASERVER1);
+// console.log("当前所接入服务地址1----->", process.env.VUE_APP_DATASERVER1);
 
 const externals = {
   // vue: "Vue",
@@ -69,7 +69,7 @@ module.exports = {
 
   devServer: {
     // host: "0.0.0.0",
-    port: "9999",
+    port: "9834",
     hot: true,
     // open: true,
     // logLevel: "debug",
