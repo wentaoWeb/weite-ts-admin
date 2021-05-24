@@ -29,7 +29,7 @@ const isProduction = process.env.NODE_ENV === "production";
 const devUseCDN = false;
 
 module.exports = {
-  publicPath: process.env.VUE_APP_PUBLIC_PATH,
+  publicPath: './',
   outputDir: "dist",
   assetsDir: "static",
   lintOnSave: true,
